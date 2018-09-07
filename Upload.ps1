@@ -14,11 +14,11 @@ if((Get-PSSnapin | Where {$_.Name -eq "Microsoft.SharePoint.PowerShell"}) -eq $n
      Add-PSSnapin Microsoft.SharePoint.PowerShell;
 }
 #Site Collection where you want to upload files
-$siteCollUrl = "http://cplab-app1/sites/DTlab"
+$siteCollUrl = "http://sitecollectionurl"
 #Document Library where you want to upload files
-$libraryName = "DEA"
+$libraryName = "Document Library Name"
 #Physical/Network location of files
-$reportFilesLocation = "C:\Users\spsql\Desktop\DEA" #Top level of the file structure you want to replicate in SharePoint. Everything UNDER this directory will be copied to the document library.
+$reportFilesLocation = "C:\Users\user\desktop\folder" #Top level of the file structure you want to replicate in SharePoint. Everything UNDER this directory will be copied to the document library.
 $spSourceWeb = Get-SPWeb $siteCollUrl;
 $spSourceList = $spSourceWeb.Lists[$libraryName];
 if($spSourceList -eq $null)
